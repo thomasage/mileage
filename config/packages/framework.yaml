@@ -9,6 +9,7 @@ framework:
         handler_id: ~
         cookie_secure: auto
         cookie_samesite: lax
+        name: 'app_mileage'
 
     #esi: true
     #fragments: true
