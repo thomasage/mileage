@@ -97,7 +97,7 @@ class CarController extends AbstractController
      */
     public function index(CarRepository $carRepository): Response
     {
-        $cars = $carRepository->findAll();
+        $cars = $carRepository->findBy([], ['title' => 'ASC']);
 
         return $this->render(
             'car/index.html.twig',
