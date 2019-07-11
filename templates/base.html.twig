@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% if app.user %}
+    {% set menuPrimaryActive=menuPrimaryActive|default('home') %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mileage</a>
+            <button type="button"
+                    class="navbar-toggler"
+                    data-toggle="collapse"
+                    data-target="#navbarPrimary"
+                    aria-controls="navbarPrimary"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarPrimary">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% if 'home'==menuPrimaryActive %}active{% endif %}">
+                        <a href="{{ path('app_homepage') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item {% if 'record'==menuPrimaryActive %}active{% endif %}">
+                        <a href="{{ path('app_record_index') }}" class="nav-link">Records</a>
+                    </li>
+                    <li class="nav-item {% if 'car'==menuPrimaryActive %}active{% endif %}">
+                        <a href="{{ path('app_car_index') }}" class="nav-link">Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_logout') }}" class="nav-link">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endif %}
+<div class="container">
+    {% include '_flashbag.html.twig' %}
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>

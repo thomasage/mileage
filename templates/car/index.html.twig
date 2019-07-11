@@ -1,0 +1,27 @@
+{% extends 'car/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-car-index">
+
+        <div class="d-flex flex-row mt-4">
+            <h3 class="flex-grow-1">{{ 'title.cars'|trans }}</h3>
+            <div>
+                <a href="{{ path('app_car_add') }}" class="btn btn-outline-primary">
+                    <span class="fa fa-plus"></span>
+                    {{ 'action.add'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <div class="list-group mt-4">
+            {% for car in cars %}
+                <a href="{{ path('app_car_edit',{car:car.id}) }}" class="list-group-item list-group-item-action">
+                    {{ car }}
+                </a>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}

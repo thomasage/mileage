@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="jdbtx6z" resname="action.add">
+        <source>action.add</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit id="Qj1ElaL" resname="action.cancel">
+        <source>action.cancel</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="HLtdhYw" resname="action.save">
+        <source>action.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="VKhfRZB" resname="field.title">
+        <source>field.title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="nmfd0_X" resname="notification.car_added">
+        <source>notification.car_added</source>
+        <target>The car has been added.</target>
+      </trans-unit>
+      <trans-unit id="A4_Och0" resname="notification.car_updated">
+        <source>notification.car_updated</source>
+        <target>The car has been updated.</target>
+      </trans-unit>
+      <trans-unit id="zFiZE2F" resname="title.add_car">
+        <source>title.add_car</source>
+        <target>Add a car</target>
+      </trans-unit>
+      <trans-unit id="HvNZsgm" resname="title.cars">
+        <source>title.cars</source>
+        <target>Cars</target>
+      </trans-unit>
+      <trans-unit id="6ZhbuH9" resname="title.edit_car">
+        <source>title.edit_car</source>
+        <target>Edit a car</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

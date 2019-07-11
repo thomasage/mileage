@@ -1,0 +1,28 @@
+{% extends 'record/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-record-index">
+
+        <table class="table mt-5">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Car</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.date|localizeddate('full','none') }}</td>
+                    <td>{{ record.car }}</td>
+                    <td>{{ record.value|number_format(null,null,' ') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% set flashbag=app.session.flashBag.all %}
+
+{% if flashbag|length>0 %}
+    <div class="mt-5">
+        {% for type,messages in flashbag %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
