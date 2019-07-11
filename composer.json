@@ -1,4 +1,6 @@
 {
+    "name": "thomasage/mileage",
+    "description": "A simple app to record mileage",
     "type": "project",
     "license": "proprietary",
     "require": {
