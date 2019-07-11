@@ -13,13 +13,41 @@
         <source>action.cancel</source>
         <target>Cancel</target>
       </trans-unit>
+      <trans-unit id="uJxPe9E" resname="action.login">
+        <source>action.login</source>
+        <target>Login</target>
+      </trans-unit>
       <trans-unit id="HLtdhYw" resname="action.save">
         <source>action.save</source>
         <target>Save</target>
       </trans-unit>
+      <trans-unit id="utzcVoZ" resname="field.password">
+        <source>field.password</source>
+        <target>Password</target>
+      </trans-unit>
       <trans-unit id="VKhfRZB" resname="field.title">
         <source>field.title</source>
         <target>Title</target>
+      </trans-unit>
+      <trans-unit id="tpyeTyd" resname="field.username">
+        <source>field.username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="lTru1Ri" resname="menu.cars">
+        <source>menu.cars</source>
+        <target>Cars</target>
+      </trans-unit>
+      <trans-unit id="GyNiJAi" resname="menu.home">
+        <source>menu.home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="wBTFKFR" resname="menu.logout">
+        <source>menu.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="7kj984i" resname="menu.records">
+        <source>menu.records</source>
+        <target>Records</target>
       </trans-unit>
       <trans-unit id="nmfd0_X" resname="notification.car_added">
         <source>notification.car_added</source>
@@ -28,6 +56,10 @@
       <trans-unit id="A4_Och0" resname="notification.car_updated">
         <source>notification.car_updated</source>
         <target>The car has been updated.</target>
+      </trans-unit>
+      <trans-unit id="uTT64Kc" resname="remember_me">
+        <source>remember_me</source>
+        <target>Remember me</target>
       </trans-unit>
       <trans-unit id="zFiZE2F" resname="title.add_car">
         <source>title.add_car</source>
@@ -40,6 +72,10 @@
       <trans-unit id="6ZhbuH9" resname="title.edit_car">
         <source>title.edit_car</source>
         <target>Edit a car</target>
+      </trans-unit>
+      <trans-unit id="EyKiyO7" resname="you_are_logged_in_as">
+        <source>you_are_logged_in_as</source>
+        <target>You are logged in as</target>
       </trans-unit>
     </body>
   </file>

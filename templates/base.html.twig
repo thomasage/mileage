@@ -2,7 +2,7 @@
 <html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Mileage{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarPrimary">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item {% if 'home'==menuPrimaryActive %}active{% endif %}">
-                        <a href="{{ path('app_homepage') }}" class="nav-link">Home</a>
+                        <a href="{{ path('app_homepage') }}" class="nav-link">{{ 'menu.home'|trans }}</a>
                     </li>
                     <li class="nav-item {% if 'record'==menuPrimaryActive %}active{% endif %}">
-                        <a href="{{ path('app_record_index') }}" class="nav-link">Records</a>
+                        <a href="{{ path('app_record_index') }}" class="nav-link">{{ 'menu.records'|trans }}</a>
                     </li>
                     <li class="nav-item {% if 'car'==menuPrimaryActive %}active{% endif %}">
-                        <a href="{{ path('app_car_index') }}" class="nav-link">Cars</a>
+                        <a href="{{ path('app_car_index') }}" class="nav-link">{{ 'menu.cars'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ path('app_logout') }}" class="nav-link">Log out</a>
+                        <a href="{{ path('app_logout') }}" class="nav-link">{{ 'menu.logout'|trans }}</a>
                     </li>
                 </ul>
             </div>
