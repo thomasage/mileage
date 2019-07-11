@@ -4,9 +4,26 @@
 
     <div id="page-homepage">
 
-        <div id="primaryChartContainer">
-            <canvas id="primaryChart" width="400" height="200"></canvas>
+        <div class="mb-4 mt-4 mb-md-5 mt-md-5">
+            {% for c in cars %}
+                <a href="{{ path('app_homepage',{car:c.id}) }}"
+                   class="btn {% if car and car.id==c.id %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+                    <span class="fa fa-car"></span>
+                    {{ c }}
+                </a>
+            {% endfor %}
         </div>
+
+        {% if car %}
+
+            <div id="primaryChart"
+                 data-url="{{ path('app_load_records',{car:car.id}) }}"
+                 data-title-xaxis="{{ 'field.date'|trans }}"
+                 data-title-yaxis="{{ 'field.mileage'|trans }}"
+                 data-title-serie0="{{ 'field.forecast'|trans }}"
+                 data-title-serie1="{{ 'field.real'|trans }}"></div>
+
+        {% endif %}
 
     </div>
 

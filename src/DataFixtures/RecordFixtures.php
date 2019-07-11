@@ -7,24 +7,33 @@ use App\Entity\Record;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Faker\Factory;
 
 class RecordFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $faker = Factory::create();
-
         /** @var Car $car1 */
         $car1 = $this->getReference('car1');
 
-        for ($i = 0; $i < 5; $i++) {
+        $data = [
+            ['2017-08-30', 5000, true],
+            ['2022-08-30', 135000, true],
+            ['2017-09-30', 3929, false],
+            ['2017-10-04', 4462, false],
+            ['2017-10-05', 4464, false],
+            ['2017-10-29', 5613, false],
+            ['2017-11-14', 7354, false],
+            ['2017-11-18', 7873, false],
+        ];
+
+        foreach ($data as $datum) {
 
             $record = new Record();
             $record
                 ->setCar($car1)
-                ->setDate($faker->dateTimeBetween(sprintf('-%d weeks', 5 - $i), sprintf('-%d weeks -1 day', 4 - $i)))
-                ->setValue($faker->numberBetween($i * 10000, ($i + 1) * 10000 - 1));
+                ->setDate(new \DateTime($datum[0]))
+                ->setForecast($datum[2])
+                ->setValue($datum[1]);
 
             $manager->persist($record);
         }

@@ -5,3 +5,8 @@
   max-width: 25em;
   margin: 5em auto;
 }
+
+tr[data-url]:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}

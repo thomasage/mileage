@@ -21,9 +21,33 @@
         <source>action.save</source>
         <target>Save</target>
       </trans-unit>
+      <trans-unit id=".LzxZZC" resname="false">
+        <source>false</source>
+        <target>False</target>
+      </trans-unit>
+      <trans-unit id="8vyadWV" resname="field.car">
+        <source>field.car</source>
+        <target>Car</target>
+      </trans-unit>
+      <trans-unit id="zezGq0m" resname="field.date">
+        <source>field.date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="Im5sF6a" resname="field.forecast">
+        <source>field.forecast</source>
+        <target>Forecast</target>
+      </trans-unit>
+      <trans-unit id="TdoRQG0" resname="field.mileage">
+        <source>field.mileage</source>
+        <target>Mileage</target>
+      </trans-unit>
       <trans-unit id="utzcVoZ" resname="field.password">
         <source>field.password</source>
         <target>Password</target>
+      </trans-unit>
+      <trans-unit id="fZblbNX" resname="field.real">
+        <source>field.real</source>
+        <target>Real</target>
       </trans-unit>
       <trans-unit id="VKhfRZB" resname="field.title">
         <source>field.title</source>
@@ -57,6 +81,14 @@
         <source>notification.car_updated</source>
         <target>The car has been updated.</target>
       </trans-unit>
+      <trans-unit id="vstfHgs" resname="notification.record_added">
+        <source>notification.record_added</source>
+        <target>The record has been added.</target>
+      </trans-unit>
+      <trans-unit id="2KSh9cA" resname="notification.record_updated">
+        <source>notification.record_updated</source>
+        <target>The record has been updated.</target>
+      </trans-unit>
       <trans-unit id="uTT64Kc" resname="remember_me">
         <source>remember_me</source>
         <target>Remember me</target>
@@ -65,6 +97,10 @@
         <source>title.add_car</source>
         <target>Add a car</target>
       </trans-unit>
+      <trans-unit id="rIf0Am0" resname="title.add_record">
+        <source>title.add_record</source>
+        <target>Add record</target>
+      </trans-unit>
       <trans-unit id="HvNZsgm" resname="title.cars">
         <source>title.cars</source>
         <target>Cars</target>
@@ -72,6 +108,18 @@
       <trans-unit id="6ZhbuH9" resname="title.edit_car">
         <source>title.edit_car</source>
         <target>Edit a car</target>
+      </trans-unit>
+      <trans-unit id="sgoExFx" resname="title.edit_record">
+        <source>title.edit_record</source>
+        <target>Edit record</target>
+      </trans-unit>
+      <trans-unit id="CkO71GS" resname="title.records">
+        <source>title.records</source>
+        <target>Records</target>
+      </trans-unit>
+      <trans-unit id="tb6kG2x" resname="true">
+        <source>true</source>
+        <target>True</target>
       </trans-unit>
       <trans-unit id="EyKiyO7" resname="you_are_logged_in_as">
         <source>you_are_logged_in_as</source>

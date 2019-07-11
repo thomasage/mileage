@@ -1,0 +1,35 @@
+{% extends 'record/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-record-add">
+
+        <div class="d-flex flex-row mt-4">
+            <h3 class="flex-grow-1">{{ 'title.add_record'|trans }}</h3>
+            <div>
+                <a href="{{ path('app_record_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            {{ form_start(formEdit) }}
+            {{ form_widget(formEdit) }}
+            <div class="mt-4">
+                <button type="submit" class="btn btn-success">
+                    <span class="fa fa-save"></span>
+                    {{ 'action.save'|trans }}
+                </button>
+                <a href="{{ path('app_record_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+            {{ form_end(formEdit) }}
+        </div>
+
+    </div>
+
+{% endblock %}

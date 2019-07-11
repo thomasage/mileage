@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+/**
+ * @Route("/car")
+ */
 class CarController extends AbstractController
 {
     /**
@@ -21,7 +24,7 @@ class CarController extends AbstractController
      * @param TranslatorInterface $translator
      * @return Response
      *
-     * @Route("/car/add", name="app_car_add", methods={"GET", "POST"})
+     * @Route("/add", name="app_car_add", methods={"GET", "POST"})
      */
     public function add(Request $request, EntityManagerInterface $em, TranslatorInterface $translator): Response
     {
@@ -56,7 +59,7 @@ class CarController extends AbstractController
      * @param Car $car
      * @return Response
      *
-     * @Route("/car/{car}", name="app_car_edit", methods={"GET", "POST"})
+     * @Route("/{car}", name="app_car_edit", methods={"GET", "POST"})
      */
     public function edit(
         Request $request,
@@ -90,7 +93,7 @@ class CarController extends AbstractController
      * @param CarRepository $carRepository
      * @return Response
      *
-     * @Route("/car", name="app_car_index", methods={"GET"})
+     * @Route("/", name="app_car_index", methods={"GET"})
      */
     public function index(CarRepository $carRepository): Response
     {
