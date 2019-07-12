@@ -30,17 +30,23 @@
             {{ form_end(formEdit) }}
         </div>
 
-        <h5 class="mt-5 border-bottom text-danger">{{ 'danger_zone'|trans }}</h5>
+        <h5 class="mt-5">{{ 'danger_zone'|trans }}</h5>
 
-        {{ form_start(formDelete) }}
-        {{ form_widget(formDelete) }}
-        <div>
-            <button type="submit" class="btn btn-danger btn-sm">
-                <span class="fa fa-trash"></span>
-                {{ 'action.delete'|trans }}
-            </button>
+        <div class="p-3 border border-danger">
+
+            {{ form_start(formDelete) }}
+            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between">
+                {{ form_widget(formDelete.confirmation) }}
+                <div>
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <span class="fa fa-trash"></span>
+                        {{ 'action.delete'|trans }}
+                    </button>
+                </div>
+            </div>
+            {{ form_end(formDelete) }}
+
         </div>
-        {{ form_end(formDelete) }}
 
     </div>
 

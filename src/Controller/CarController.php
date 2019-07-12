@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Car;
+use App\Form\CarDeleteType;
 use App\Form\CarType;
 use App\Repository\CarRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -80,10 +81,25 @@ class CarController extends AbstractController
 
         }
 
+        $formDelete = $this->createForm(CarDeleteType::class, $car);
+        $formDelete->handleRequest($request);
+
+        if ($formDelete->isSubmitted() && $formDelete->isValid()) {
+
+            $em->remove($car);
+            $em->flush();
+
+            $this->addFlash('success', $translator->trans('notification.car_removed'));
+
+            return $this->redirectToRoute('app_car_index');
+
+        }
+
         return $this->render(
             'car/edit.html.twig',
             [
                 'car' => $car,
+                'formDelete' => $formDelete->createView(),
                 'formEdit' => $formEdit->createView(),
             ]
         );

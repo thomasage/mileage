@@ -29,6 +29,10 @@
         <source>danger_zone</source>
         <target>Danger zone</target>
       </trans-unit>
+      <trans-unit id="7d2qs2J" resname="confirmation.delete_car">
+        <source>confirmation.delete_car</source>
+        <target>I want to delete this car</target>
+      </trans-unit>
       <trans-unit id="c.dftKr" resname="confirmation.delete_record">
         <source>confirmation.delete_record</source>
         <target>I want to delete this record</target>
@@ -89,6 +93,10 @@
         <source>notification.car_added</source>
         <target>The car has been added.</target>
       </trans-unit>
+      <trans-unit id="HOCuMdR" resname="notification.car_removed">
+        <source>notification.car_removed</source>
+        <target>The car has been removed.</target>
+      </trans-unit>
       <trans-unit id="A4_Och0" resname="notification.car_updated">
         <source>notification.car_updated</source>
         <target>The car has been updated.</target>
@@ -97,13 +105,13 @@
         <source>notification.record_added</source>
         <target>The record has been added.</target>
       </trans-unit>
-      <trans-unit id="2KSh9cA" resname="notification.record_updated">
-        <source>notification.record_updated</source>
-        <target>The record has been updated.</target>
-      </trans-unit>
       <trans-unit id="qxoAVwJ" resname="notification.record_removed">
         <source>notification.record_removed</source>
         <target>The record has been removed.</target>
+      </trans-unit>
+      <trans-unit id="2KSh9cA" resname="notification.record_updated">
+        <source>notification.record_updated</source>
+        <target>The record has been updated.</target>
       </trans-unit>
       <trans-unit id="uTT64Kc" resname="remember_me">
         <source>remember_me</source>
