@@ -13,6 +13,10 @@
         <source>action.cancel</source>
         <target>Cancel</target>
       </trans-unit>
+      <trans-unit id="hTKWQ6g" resname="action.delete">
+        <source>action.delete</source>
+        <target>Delete</target>
+      </trans-unit>
       <trans-unit id="uJxPe9E" resname="action.login">
         <source>action.login</source>
         <target>Login</target>
@@ -20,6 +24,14 @@
       <trans-unit id="HLtdhYw" resname="action.save">
         <source>action.save</source>
         <target>Save</target>
+      </trans-unit>
+      <trans-unit id="NGooIBs" resname="danger_zone">
+        <source>danger_zone</source>
+        <target>Danger zone</target>
+      </trans-unit>
+      <trans-unit id="c.dftKr" resname="confirmation.delete_record">
+        <source>confirmation.delete_record</source>
+        <target>I want to delete this record</target>
       </trans-unit>
       <trans-unit id=".LzxZZC" resname="false">
         <source>false</source>
@@ -88,6 +100,10 @@
       <trans-unit id="2KSh9cA" resname="notification.record_updated">
         <source>notification.record_updated</source>
         <target>The record has been updated.</target>
+      </trans-unit>
+      <trans-unit id="qxoAVwJ" resname="notification.record_removed">
+        <source>notification.record_removed</source>
+        <target>The record has been removed.</target>
       </trans-unit>
       <trans-unit id="uTT64Kc" resname="remember_me">
         <source>remember_me</source>

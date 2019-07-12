@@ -35,10 +35,10 @@ class CarController extends AbstractController
 
         if ($formEdit->isSubmitted() && $formEdit->isValid()) {
 
-            $this->addFlash('success', $translator->trans('notification.car_added'));
-
             $em->persist($car);
             $em->flush();
+
+            $this->addFlash('success', $translator->trans('notification.car_added'));
 
             return $this->redirectToRoute('app_car_index');
 
@@ -72,9 +72,9 @@ class CarController extends AbstractController
 
         if ($formEdit->isSubmitted() && $formEdit->isValid()) {
 
-            $this->addFlash('success', $translator->trans('notification.car_updated'));
-
             $em->flush();
+
+            $this->addFlash('success', $translator->trans('notification.car_updated'));
 
             return $this->redirectToRoute('app_car_index');
 

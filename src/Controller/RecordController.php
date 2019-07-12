@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Record;
+use App\Form\RecordDeleteType;
 use App\Form\RecordType;
 use App\Repository\RecordRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,10 +36,10 @@ class RecordController extends AbstractController
 
         if ($formEdit->isSubmitted() && $formEdit->isValid()) {
 
-            $this->addFlash('success', $translator->trans('notification.record_added'));
-
             $em->persist($record);
             $em->flush();
+
+            $this->addFlash('success', $translator->trans('notification.record_added'));
 
             return $this->redirectToRoute('app_record_index');
 
@@ -72,9 +73,23 @@ class RecordController extends AbstractController
 
         if ($formEdit->isSubmitted() && $formEdit->isValid()) {
 
+            $em->flush();
+
             $this->addFlash('success', $translator->trans('notification.record_updated'));
 
+            return $this->redirectToRoute('app_record_index');
+
+        }
+
+        $formDelete=$this->createForm(RecordDeleteType::class,$record);
+        $formDelete->handleRequest($request);
+
+        if($formDelete->isSubmitted() && $formDelete->isValid()) {
+
+            $em->remove($record);
             $em->flush();
+
+            $this->addFlash('success', $translator->trans('notification.record_removed'));
 
             return $this->redirectToRoute('app_record_index');
 
@@ -83,6 +98,7 @@ class RecordController extends AbstractController
         return $this->render(
             'record/edit.html.twig',
             [
+                'formDelete' => $formDelete->createView(),
                 'formEdit' => $formEdit->createView(),
                 'record' => $record,
             ]
