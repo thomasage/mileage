@@ -1,0 +1,75 @@
+{% extends 'user/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-user-edit">
+
+        <div class="d-flex flex-row mt-4">
+            <h3 class="flex-grow-1">{{ 'title.edit_user'|trans }}</h3>
+            <div>
+                <a href="{{ path('app_user_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            {{ form_start(formEdit) }}
+            {{ form_widget(formEdit) }}
+            <div class="mt-4">
+                <button type="submit" class="btn btn-success">
+                    <span class="fa fa-save"></span>
+                    {{ 'action.save'|trans }}
+                </button>
+                <a href="{{ path('app_user_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+            {{ form_end(formEdit) }}
+        </div>
+
+        <h5 class="mt-5">{{ 'title.edit_user_password'|trans }}</h5>
+
+        <div class="mt-4">
+            {{ form_start(formPassword) }}
+            {{ form_widget(formPassword) }}
+            <div class="mt-4">
+                <button type="submit" class="btn btn-success">
+                    <span class="fa fa-save"></span>
+                    {{ 'action.save'|trans }}
+                </button>
+                <a href="{{ path('app_user_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+            {{ form_end(formPassword) }}
+        </div>
+
+        {% if countUsers>1 %}
+
+            <h5 class="mt-5">{{ 'danger_zone'|trans }}</h5>
+
+            <div class="p-3 border border-danger">
+
+                {{ form_start(formDelete) }}
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between">
+                    {{ form_widget(formDelete.confirmation) }}
+                    <div>
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <span class="fa fa-trash"></span>
+                            {{ 'action.delete'|trans }}
+                        </button>
+                    </div>
+                </div>
+                {{ form_end(formDelete) }}
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}

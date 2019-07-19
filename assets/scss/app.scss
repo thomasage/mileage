@@ -10,3 +10,9 @@ tr[data-url]:hover {
   background-color: aliceblue;
   cursor: pointer;
 }
+
+label.required:after {
+  content: ' *';
+  color: red;
+  font-weight: bold;
+}

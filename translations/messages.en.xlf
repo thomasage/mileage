@@ -37,6 +37,10 @@
         <source>confirmation.delete_record</source>
         <target>I want to delete this record</target>
       </trans-unit>
+      <trans-unit id="aHw5Vzp" resname="confirmation.delete_user">
+        <source>confirmation.delete_user</source>
+        <target>I want to delete this user</target>
+      </trans-unit>
       <trans-unit id=".LzxZZC" resname="false">
         <source>false</source>
         <target>False</target>
@@ -44,6 +48,10 @@
       <trans-unit id="8vyadWV" resname="field.car">
         <source>field.car</source>
         <target>Car</target>
+      </trans-unit>
+      <trans-unit id="S_Kzpw_" resname="field.confirmation">
+        <source>field.confirmation</source>
+        <target>Confirmation</target>
       </trans-unit>
       <trans-unit id="zezGq0m" resname="field.date">
         <source>field.date</source>
@@ -89,6 +97,10 @@
         <source>menu.records</source>
         <target>Records</target>
       </trans-unit>
+      <trans-unit id="fw94.4n" resname="menu.users">
+        <source>menu.users</source>
+        <target>Users</target>
+      </trans-unit>
       <trans-unit id="nmfd0_X" resname="notification.car_added">
         <source>notification.car_added</source>
         <target>The car has been added.</target>
@@ -100,6 +112,10 @@
       <trans-unit id="A4_Och0" resname="notification.car_updated">
         <source>notification.car_updated</source>
         <target>The car has been updated.</target>
+      </trans-unit>
+      <trans-unit id="_uxYNiY" resname="notification.only_one_user_left">
+        <source>notification.only_one_user_left</source>
+        <target>You can't delete the last user.</target>
       </trans-unit>
       <trans-unit id="vstfHgs" resname="notification.record_added">
         <source>notification.record_added</source>
@@ -113,6 +129,22 @@
         <source>notification.record_updated</source>
         <target>The record has been updated.</target>
       </trans-unit>
+      <trans-unit id="qor2gCD" resname="notification.user_added">
+        <source>notification.user_added</source>
+        <target>The user has been added.</target>
+      </trans-unit>
+      <trans-unit id="OBzIMyH" resname="notification.user_password_updated">
+        <source>notification.user_password_updated</source>
+        <target>The password has been updated.</target>
+      </trans-unit>
+      <trans-unit id="QfDhTj5" resname="notification.user_removed">
+        <source>notification.user_removed</source>
+        <target>The user has been removed.</target>
+      </trans-unit>
+      <trans-unit id="zDJVB3f" resname="notification.user_updated">
+        <source>notification.user_updated</source>
+        <target>The user has been updated.</target>
+      </trans-unit>
       <trans-unit id="uTT64Kc" resname="remember_me">
         <source>remember_me</source>
         <target>Remember me</target>
@@ -123,7 +155,11 @@
       </trans-unit>
       <trans-unit id="rIf0Am0" resname="title.add_record">
         <source>title.add_record</source>
-        <target>Add record</target>
+        <target>Add a record</target>
+      </trans-unit>
+      <trans-unit id="FcXvWL8" resname="title.add_user">
+        <source>title.add_user</source>
+        <target>Add an user</target>
       </trans-unit>
       <trans-unit id="HvNZsgm" resname="title.cars">
         <source>title.cars</source>
@@ -135,11 +171,23 @@
       </trans-unit>
       <trans-unit id="sgoExFx" resname="title.edit_record">
         <source>title.edit_record</source>
-        <target>Edit record</target>
+        <target>Edit a record</target>
+      </trans-unit>
+      <trans-unit id="1sstKF9" resname="title.edit_user">
+        <source>title.edit_user</source>
+        <target>Edit an user</target>
+      </trans-unit>
+      <trans-unit id="3NgcRnw" resname="title.edit_user_password">
+        <source>title.edit_user_password</source>
+        <target>Edit password</target>
       </trans-unit>
       <trans-unit id="CkO71GS" resname="title.records">
         <source>title.records</source>
         <target>Records</target>
+      </trans-unit>
+      <trans-unit id="fKgc.kW" resname="title.users">
+        <source>title.users</source>
+        <target>Users</target>
       </trans-unit>
       <trans-unit id="tb6kG2x" resname="true">
         <source>true</source>

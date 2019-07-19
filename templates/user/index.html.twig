@@ -1,0 +1,27 @@
+{% extends 'user/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-user-index">
+
+        <div class="d-flex flex-row mt-4">
+            <h3 class="flex-grow-1">{{ 'title.users'|trans }}</h3>
+            <div>
+                <a href="{{ path('app_user_add') }}" class="btn btn-outline-primary">
+                    <span class="fa fa-plus"></span>
+                    {{ 'action.add'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <div class="list-group mt-4">
+            {% for user in users %}
+                <a href="{{ path('app_user_edit',{user:user.id}) }}" class="list-group-item list-group-item-action">
+                    {{ user }}
+                </a>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}

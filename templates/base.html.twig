@@ -33,6 +33,9 @@
                     <li class="nav-item {% if 'car'==menuPrimaryActive %}active{% endif %}">
                         <a href="{{ path('app_car_index') }}" class="nav-link">{{ 'menu.cars'|trans }}</a>
                     </li>
+                    <li class="nav-item {% if 'user'==menuPrimaryActive %}active{% endif %}">
+                        <a href="{{ path('app_user_index') }}" class="nav-link">{{ 'menu.users'|trans }}</a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ path('app_logout') }}" class="nav-link">{{ 'menu.logout'|trans }}</a>
                     </li>

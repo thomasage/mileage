@@ -1,0 +1,35 @@
+{% extends 'user/base.html.twig' %}
+
+{% block body %}
+
+    <div id="page-user-add">
+
+        <div class="d-flex flex-row mt-4">
+            <h3 class="flex-grow-1">{{ 'title.add_user'|trans }}</h3>
+            <div>
+                <a href="{{ path('app_user_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            {{ form_start(formEdit) }}
+            {{ form_widget(formEdit) }}
+            <div class="mt-4">
+                <button type="submit" class="btn btn-success">
+                    <span class="fa fa-save"></span>
+                    {{ 'action.save'|trans }}
+                </button>
+                <a href="{{ path('app_user_index') }}" class="btn btn-outline-secondary">
+                    <span class="fa fa-times"></span>
+                    {{ 'action.cancel'|trans }}
+                </a>
+            </div>
+            {{ form_end(formEdit) }}
+        </div>
+
+    </div>
+
+{% endblock %}
