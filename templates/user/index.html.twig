@@ -18,6 +18,11 @@
             {% for user in users %}
                 <a href="{{ path('app_user_edit',{user:user.id}) }}" class="list-group-item list-group-item-action">
                     {{ user }}
+                    {% if user.enabled %}
+                        <span class="float-right badge badge-success">{{ 'enabled'|trans }}</span>
+                    {% else %}
+                        <span class="float-right badge badge-danger">{{ 'disabled'|trans }}</span>
+                    {% endif %}
                 </a>
             {% endfor %}
         </div>

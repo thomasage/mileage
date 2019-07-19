@@ -41,6 +41,14 @@
         <source>confirmation.delete_user</source>
         <target>I want to delete this user</target>
       </trans-unit>
+      <trans-unit id="F_s8AWj" resname="disabled">
+        <source>disabled</source>
+        <target>Disabled</target>
+      </trans-unit>
+      <trans-unit id="_5z3Vga" resname="enabled">
+        <source>enabled</source>
+        <target>Enabled</target>
+      </trans-unit>
       <trans-unit id=".LzxZZC" resname="false">
         <source>false</source>
         <target>False</target>
@@ -56,6 +64,10 @@
       <trans-unit id="zezGq0m" resname="field.date">
         <source>field.date</source>
         <target>Date</target>
+      </trans-unit>
+      <trans-unit id="GAGKLLt" resname="field.enabled">
+        <source>field.enabled</source>
+        <target>Enabled</target>
       </trans-unit>
       <trans-unit id="Im5sF6a" resname="field.forecast">
         <source>field.forecast</source>

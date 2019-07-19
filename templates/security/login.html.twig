@@ -10,7 +10,8 @@
 
         {% if app.user %}
             <div class="checkbox mb-3">
-                {{ 'you_are_logged_in_as'|trans }} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'menu.logout'|trans }}</a>
+                {{ 'you_are_logged_in_as'|trans }} {{ app.user.username }},
+                <a href="{{ path('app_logout') }}">{{ 'menu.logout'|trans }}</a>
             </div>
         {% endif %}
 
@@ -38,7 +39,7 @@
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" name="_remember_me"> {{ 'remember_me'|trans }}
+                <input type="checkbox" name="_remember_me" checked/> {{ 'remember_me'|trans }}
             </label>
         </div>
 
