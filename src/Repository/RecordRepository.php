@@ -29,7 +29,7 @@ class RecordRepository extends ServiceEntityRepository
 
         /** @var Record $r */
         foreach ($builder->getQuery()->getResult() as $r) {
-            $series[$r->getForecast() ? 1 : 0]['data'][$r->getDate()->getTimestamp() * 1000] = $r->getValue();
+            $series[$r->getForecast() ? 1 : 0]['data'][$r->getDate()->format('Y-m-d')] = $r->getValue();
         }
 
         return $series;

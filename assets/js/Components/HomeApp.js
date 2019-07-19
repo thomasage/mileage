@@ -39,7 +39,7 @@ class HomeApp {
                 if (!serie.data.hasOwnProperty(date)) {
                     continue;
                 }
-                series[s].data.push([parseInt(date), serie.data[date]]);
+                series[s].data.push([Date.parse(date), serie.data[date]]);
             }
         });
 
@@ -76,8 +76,7 @@ class HomeApp {
                     title: {
                         text: this.$wrapper.data('title-yaxis')
                     },
-                    min: 0,
-                    max: 135000
+                    min: 0
                 },
                 tooltip: {
                     headerFormat: '<b>{series.name}</b><br>',
@@ -95,7 +94,6 @@ class HomeApp {
         );
 
     }
-
 
 }
 
