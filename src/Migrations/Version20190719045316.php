@@ -20,7 +20,7 @@ final class Version20190719045316 extends AbstractMigration
             'Migration can only be executed safely on \'mysql\'.'
         );
 
-        $this->addSql('ALTER TABLE user ADD enabled TINYINT(1) NOT NULL, CHANGE roles roles JSON NOT NULL');
+        $this->addSql('ALTER TABLE user ADD enabled TINYINT(1) NOT NULL');
     }
 
     /**
