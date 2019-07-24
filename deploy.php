@@ -18,7 +18,7 @@ set('git_tty', true);
 
 // Shared files/dirs between deploys
 
-set('shared_files', ['.env.local', 'var/data.db']);
+set('shared_files', ['.env.local']);
 add('shared_dirs', []);
 
 // Writable dirs by web server
