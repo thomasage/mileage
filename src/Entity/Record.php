@@ -43,11 +43,6 @@ class Record
      */
     private $value;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $forecast = false;
-
     public function __construct()
     {
         $this->date = new \DateTime();
@@ -90,18 +85,6 @@ class Record
     public function setValue(int $value): self
     {
         $this->value = $value;
-
-        return $this;
-    }
-
-    public function getForecast(): bool
-    {
-        return $this->forecast;
-    }
-
-    public function setForecast(bool $forecast): self
-    {
-        $this->forecast = $forecast;
 
         return $this;
     }

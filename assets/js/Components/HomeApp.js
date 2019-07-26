@@ -52,8 +52,10 @@ class HomeApp {
         series[0].color = 'blue';
         series[0].name = this.$wrapper.data('title-serie0');
 
-        series[1].color = 'green';
-        series[1].name = this.$wrapper.data('title-serie1');
+        if (series[1]) {
+            series[1].color = 'green';
+            series[1].name = this.$wrapper.data('title-serie1');
+        }
 
         Highcharts.chart(
             this.$wrapper.prop('id'),

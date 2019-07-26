@@ -17,10 +17,19 @@ class RecordRepository extends ServiceEntityRepository
 
     public function findChartData(Car $car): array
     {
-        $series = [
-            ['data' => []],
-            ['data' => []],
-        ];
+        $series = [['data' => []]];
+
+        if (null !== $car->getRentalStartedAt()
+            && null !== $car->getRentalStartedMileage()
+            && null !== $car->getRentalEndedAt()
+            && null !== $car->getRentalEndedMileage()) {
+            $series[1] = [
+                'data' => [
+                    $car->getRentalStartedAt()->format('Y-m-d') => $car->getRentalStartedMileage(),
+                    $car->getRentalEndedAt()->format('Y-m-d') => $car->getRentalEndedMileage(),
+                ],
+            ];
+        }
 
         $builder = $this->createQueryBuilder('record')
             ->andWhere('record.car = :car')
@@ -29,7 +38,7 @@ class RecordRepository extends ServiceEntityRepository
 
         /** @var Record $r */
         foreach ($builder->getQuery()->getResult() as $r) {
-            $series[$r->getForecast() ? 1 : 0]['data'][$r->getDate()->format('Y-m-d')] = $r->getValue();
+            $series[0]['data'][$r->getDate()->format('Y-m-d')] = $r->getValue();
         }
 
         return $series;

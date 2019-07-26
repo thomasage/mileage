@@ -29,6 +29,26 @@ class Car
      */
     private $records;
 
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $rentalStartedAt;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rentalStartedMileage;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $rentalEndedAt;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rentalEndedMileage;
+
     public function __construct()
     {
         $this->records = new ArrayCollection();
@@ -83,6 +103,54 @@ class Car
                 $record->setCar(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRentalStartedAt(): ?\DateTimeInterface
+    {
+        return $this->rentalStartedAt;
+    }
+
+    public function setRentalStartedAt(?\DateTimeInterface $rentalStartedAt): self
+    {
+        $this->rentalStartedAt = $rentalStartedAt;
+
+        return $this;
+    }
+
+    public function getRentalStartedMileage(): ?int
+    {
+        return $this->rentalStartedMileage;
+    }
+
+    public function setRentalStartedMileage(?int $rentalStartedMileage): self
+    {
+        $this->rentalStartedMileage = $rentalStartedMileage;
+
+        return $this;
+    }
+
+    public function getRentalEndedAt(): ?\DateTimeInterface
+    {
+        return $this->rentalEndedAt;
+    }
+
+    public function setRentalEndedAt(?\DateTimeInterface $rentalEndedAt): self
+    {
+        $this->rentalEndedAt = $rentalEndedAt;
+
+        return $this;
+    }
+
+    public function getRentalEndedMileage(): ?int
+    {
+        return $this->rentalEndedMileage;
+    }
+
+    public function setRentalEndedMileage(?int $rentalEndedMileage): self
+    {
+        $this->rentalEndedMileage = $rentalEndedMileage;
 
         return $this;
     }

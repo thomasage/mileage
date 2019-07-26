@@ -5,6 +5,8 @@ namespace App\Form;
 
 use App\Entity\Car;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,6 +22,36 @@ class CarType extends AbstractType
                 [
                     'label' => 'field.title',
                     'required' => true,
+                ]
+            )
+            ->add(
+                'rentalStartedAt',
+                DateType::class,
+                [
+                    'required' => false,
+                    'widget' => 'single_text',
+                ]
+            )
+            ->add(
+                'rentalStartedMileage',
+                IntegerType::class,
+                [
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'rentalEndedAt',
+                DateType::class,
+                [
+                    'required' => false,
+                    'widget' => 'single_text',
+                ]
+            )
+            ->add(
+                'rentalEndedMileage',
+                IntegerType::class,
+                [
+                    'required' => false,
                 ]
             );
     }

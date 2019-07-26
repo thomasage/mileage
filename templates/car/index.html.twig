@@ -17,7 +17,24 @@
         <div class="list-group mt-4">
             {% for car in cars %}
                 <a href="{{ path('app_car_edit',{car:car.id}) }}" class="list-group-item list-group-item-action">
-                    {{ car }}
+                    <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                        <div>{{ car }}</div>
+                        {% if car.rentalStartedAt is not null
+                            and car.rentalStartedMileage is not null
+                            and car.rentalEndedAt is not null
+                            and car.rentalEndedMileage is not null %}
+                            <div class="small text-muted">
+                                <div>
+                                    {{ car.rentalStartedAt|localizeddate('long','none') }}
+                                    : {{ car.rentalStartedMileage|number_format(0,'.',' ') }}
+                                </div>
+                                <div>
+                                    {{ car.rentalEndedAt|localizeddate('long','none') }}
+                                    : {{ car.rentalEndedMileage|number_format(0,'.',' ') }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
                 </a>
             {% endfor %}
         </div>
