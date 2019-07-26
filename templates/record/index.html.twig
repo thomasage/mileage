@@ -20,7 +20,6 @@
                 <th>{{ 'field.date'|trans }}</th>
                 <th>{{ 'field.car'|trans }}</th>
                 <th>{{ 'field.mileage'|trans }}</th>
-                <th>{{ 'field.forecast'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -29,13 +28,6 @@
                     <td>{{ record.date|localizeddate('full','none') }}</td>
                     <td>{{ record.car }}</td>
                     <td>{{ record.value|number_format(null,null,' ') }}</td>
-                    <td>
-                        {% if record.forecast %}
-                            <span class="fa fa-calendar text-success"></span>
-                        {% else %}
-                            <span class="fa fa-calendar text-light"></span>
-                        {% endif %}
-                    </td>
                 </tr>
             {% endfor %}
             </tbody>

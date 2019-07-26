@@ -50,18 +50,6 @@ class RecordType extends AbstractType
                     'label' => 'field.mileage',
                     'required' => true,
                 ]
-            )
-            ->add(
-                'forecast',
-                ChoiceType::class,
-                [
-                    'choices' => [
-                        'true' => true,
-                        'false' => false,
-                    ],
-                    'label' => 'field.forecast',
-                    'required' => true,
-                ]
             );
     }
 
