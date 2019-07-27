@@ -69,6 +69,10 @@
         <source>field.enabled</source>
         <target>Enabled</target>
       </trans-unit>
+      <trans-unit id="Im5sF6a" resname="field.forecast">
+        <source>field.forecast</source>
+        <target>Forecast</target>
+      </trans-unit>
       <trans-unit id="TdoRQG0" resname="field.mileage">
         <source>field.mileage</source>
         <target>Mileage</target>

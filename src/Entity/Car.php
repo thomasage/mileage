@@ -26,10 +26,13 @@ class Car
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Record", mappedBy="car", orphanRemoval=true)
+     * @ORM\OrderBy({"date"="ASC"})
      */
     private $records;
 
     /**
+     * @var \DateTimeInterface|null
+     *
      * @ORM\Column(type="date", nullable=true)
      */
     private $rentalStartedAt;
@@ -40,6 +43,8 @@ class Car
     private $rentalStartedMileage;
 
     /**
+     * @var \DateTimeInterface|null
+     *
      * @ORM\Column(type="date", nullable=true)
      */
     private $rentalEndedAt;
@@ -153,5 +158,30 @@ class Car
         $this->rentalEndedMileage = $rentalEndedMileage;
 
         return $this;
+    }
+
+    public function getSupposedMileageAt(?\DateTimeInterface $date = null): ?int
+    {
+        $duration = $this->getRentalDurationInDays();
+        if (!$duration) {
+            return null;
+        }
+
+        if (!$date) {
+            $date = new \DateTime();
+        }
+
+        $daysFromStart = $date->diff($this->rentalStartedAt)->days;
+
+        return (int)($daysFromStart * ($this->rentalEndedMileage - $this->rentalStartedMileage) / $duration);
+    }
+
+    public function getRentalDurationInDays(): ?int
+    {
+        if (!$this->rentalStartedAt || !$this->rentalEndedAt) {
+            return null;
+        }
+
+        return $this->rentalEndedAt->diff($this->rentalStartedAt)->days;
     }
 }

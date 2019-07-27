@@ -23,4 +23,7 @@
 
 ### Production
 
-* TODO
+* Clone repository to local computer
+* Run `composer install`
+* Customize `hosts.yaml` from `hosts.yaml.dist`
+* Run `vendor/bin/dep deploy prod`

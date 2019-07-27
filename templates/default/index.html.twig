@@ -23,6 +23,26 @@
                  data-title-serie0="{{ 'field.real'|trans }}"
                  data-title-serie1="{{ 'field.forecast'|trans }}"></div>
 
+            {% if progress %}
+
+                <meter class="w-100 mt-5"
+                       value="{{ progress.actual }}"
+                       max="{{ max(progress.actual,progress.supposed) }}"
+                       high="{{ progress.supposed }}"></meter>
+
+                <div class="text-{% if progress.ratio>100 %}danger{% else %}info{% endif %} small mt-1">
+                    <div class="d-flex flex-column flex-sm-row justify-content-sm-between">
+                        <div>{{ progress.date|localizeddate('full','none') }}</div>
+                        <div>
+                            {{ progress.actual|number_format(0,'.',' ') }}
+                            / {{ progress.supposed|number_format(0,'.',' ') }}
+                        </div>
+                        <div><strong>{{ progress.ratio }} %</strong></div>
+                    </div>
+                </div>
+
+            {% endif %}
+
         {% endif %}
 
     </div>

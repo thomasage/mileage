@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Car;
+use App\Entity\Record;
 use App\Repository\CarRepository;
 use App\Repository\RecordRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,11 +34,26 @@ class DefaultController extends AbstractController
             return $this->redirectToRoute('app_homepage', ['car' => $cars[0]->getId()]);
         }
 
+        /** @var Record[] $records */
+        $records = $car->getRecords()->toArray();
+        $lastRecord = array_pop($records);
+        if ($lastRecord) {
+            $progress = [
+                'actual' => $lastRecord->getValue(),
+                'date' => $lastRecord->getDate(),
+                'supposed' => $car->getSupposedMileageAt($lastRecord->getDate()),
+            ];
+            $progress['ratio'] = round($progress['actual'] / $progress['supposed'] * 100, 2);
+        } else {
+            $progress = null;
+        }
+
         return $this->render(
             'default/index.html.twig',
             [
                 'car' => $car,
                 'cars' => $cars,
+                'progress' => $progress,
             ]
         );
     }
