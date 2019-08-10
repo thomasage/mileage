@@ -160,10 +160,15 @@ class Car
         return $this;
     }
 
-    public function getSupposedMileageAt(?\DateTimeInterface $date = null): ?int
+    public function getSupposedMileageAt(?\DateTimeInterface $date = null): ?float
     {
         $duration = $this->getRentalDurationInDays();
         if (!$duration) {
+            return null;
+        }
+
+        $supposedDaily = $this->getSupposedDailyMileage();
+        if (null === $supposedDaily) {
             return null;
         }
 
@@ -173,7 +178,7 @@ class Car
 
         $daysFromStart = $date->diff($this->rentalStartedAt)->days;
 
-        return (int)($daysFromStart * ($this->rentalEndedMileage - $this->rentalStartedMileage) / $duration);
+        return $supposedDaily * $daysFromStart + $this->rentalStartedMileage;
     }
 
     public function getRentalDurationInDays(): ?int
