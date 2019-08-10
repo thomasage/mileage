@@ -184,4 +184,20 @@ class Car
 
         return $this->rentalEndedAt->diff($this->rentalStartedAt)->days;
     }
+
+    public function getSupposedDailyMileage(): ?float
+    {
+        if (null === $this->rentalStartedMileage || null === $this->rentalEndedMileage) {
+            return null;
+        }
+
+        $duration = $this->getRentalDurationInDays();
+        if (!$duration) {
+            return null;
+        }
+
+        $totalMileage = $this->rentalEndedMileage - $this->rentalStartedMileage;
+
+        return $totalMileage / $duration;
+    }
 }

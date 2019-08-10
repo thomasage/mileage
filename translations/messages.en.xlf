@@ -29,6 +29,10 @@
         <source>danger_zone</source>
         <target>Danger zone</target>
       </trans-unit>
+      <trans-unit id="BZdp2lA" resname="days_in_advance">
+        <source>days_in_advance</source>
+        <target>1 day in advance|%count% days in advance</target>
+      </trans-unit>
       <trans-unit id="7d2qs2J" resname="confirmation.delete_car">
         <source>confirmation.delete_car</source>
         <target>I want to delete this car</target>
@@ -156,6 +160,10 @@
       <trans-unit id="zDJVB3f" resname="notification.user_updated">
         <source>notification.user_updated</source>
         <target>The user has been updated.</target>
+      </trans-unit>
+      <trans-unit id="tFzr.in" resname="per_day">
+        <source>per_day</source>
+        <target>per day</target>
       </trans-unit>
       <trans-unit id="uTT64Kc" resname="remember_me">
         <source>remember_me</source>

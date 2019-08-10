@@ -42,8 +42,14 @@ class DefaultController extends AbstractController
                 'actual' => $lastRecord->getValue(),
                 'date' => $lastRecord->getDate(),
                 'supposed' => $car->getSupposedMileageAt($lastRecord->getDate()),
+                'supposed_daily' => $car->getSupposedDailyMileage(),
             ];
             $progress['ratio'] = round($progress['actual'] / $progress['supposed'] * 100, 2);
+            if ($progress['actual'] > $progress['supposed']) {
+                $progress['wait_days'] = ($progress['actual'] - $progress['supposed']) / $progress['supposed_daily'];
+            } else {
+                $progress['wait_days'] = null;
+            }
         } else {
             $progress = null;
         }

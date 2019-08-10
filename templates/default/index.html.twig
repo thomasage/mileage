@@ -33,11 +33,19 @@
                 <div class="text-{% if progress.ratio>100 %}danger{% else %}info{% endif %} small mt-1">
                     <div class="d-flex flex-column flex-sm-row justify-content-sm-between">
                         <div>{{ progress.date|localizeddate('full','none') }}</div>
-                        <div>
-                            {{ progress.actual|number_format(0,'.',' ') }}
-                            / {{ progress.supposed|number_format(0,'.',' ') }}
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <div>
+                                {{ progress.actual|number_format(0,'.',' ') }}
+                                / {{ progress.supposed|number_format(0,'.',' ') }}
+                            </div>
+                            <div class="ml-3"><strong>{{ progress.ratio }} %</strong></div>
                         </div>
-                        <div><strong>{{ progress.ratio }} %</strong></div>
+                        {% if progress.wait_days %}
+                            <div class="d-flex flex-row justify-content-between align-items-center">
+                                <div>{{ 'days_in_advance'|trans({'%count%':(progress.wait_days|round(0,'ceil'))}) }}</div>
+                                <div class="ml-3 small">{{ progress.supposed_daily|round(1) }} {{ 'per_day'|trans }}</div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
 
