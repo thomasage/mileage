@@ -81,10 +81,10 @@ class RecordController extends AbstractController
 
         }
 
-        $formDelete=$this->createForm(RecordDeleteType::class,$record);
+        $formDelete = $this->createForm(RecordDeleteType::class, $record);
         $formDelete->handleRequest($request);
 
-        if($formDelete->isSubmitted() && $formDelete->isValid()) {
+        if ($formDelete->isSubmitted() && $formDelete->isValid()) {
 
             $em->remove($record);
             $em->flush();
@@ -106,14 +106,15 @@ class RecordController extends AbstractController
     }
 
     /**
+     * @param Request $request
      * @param RecordRepository $recordRepository
      * @return Response
      *
      * @Route("/", name="app_record_index", methods={"GET"})
      */
-    public function index(RecordRepository $recordRepository): Response
+    public function index(Request $request, RecordRepository $recordRepository): Response
     {
-        $records = $recordRepository->findBy([], ['date' => 'DESC', 'id' => 'DESC']);
+        $records = $recordRepository->findBySearch((int)$request->get('page', 0));
 
         return $this->render(
             'record/index.html.twig',

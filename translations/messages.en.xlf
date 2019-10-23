@@ -97,6 +97,14 @@
         <source>field.username</source>
         <target>Username</target>
       </trans-unit>
+      <trans-unit id="p5N7ZLj" resname="first">
+        <source>first</source>
+        <target>First</target>
+      </trans-unit>
+      <trans-unit id="NUfLESr" resname="last">
+        <source>last</source>
+        <target>Last</target>
+      </trans-unit>
       <trans-unit id="lTru1Ri" resname="menu.cars">
         <source>menu.cars</source>
         <target>Cars</target>

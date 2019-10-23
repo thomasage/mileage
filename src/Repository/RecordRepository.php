@@ -6,6 +6,7 @@ namespace App\Repository;
 use App\Entity\Car;
 use App\Entity\Record;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class RecordRepository extends ServiceEntityRepository
@@ -42,5 +43,16 @@ class RecordRepository extends ServiceEntityRepository
         }
 
         return $series;
+    }
+
+    public function findBySearch(int $page = 0): Paginator
+    {
+        $builder = $this->createQueryBuilder('record')
+            ->addOrderby('record.date', 'DESC')
+            ->addOrderby('record.id', 'DESC')
+            ->setFirstResult($page * 20)
+            ->setMaxResults(20);
+
+        return new Paginator($builder->getQuery());
     }
 }

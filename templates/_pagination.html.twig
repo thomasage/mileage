@@ -1,0 +1,31 @@
+{% set pageFirst=max(0,page-5) %}
+{% set pageLast=min(results|length/20,page+5) %}
+{% set pages=(results|length/20)|round(0) %}
+
+{% if 0!=pageLast %}
+
+    <nav class="mt-4">
+        <ul class="pagination">
+            {% if page>0 %}
+                <li class="page-item">
+                    <a href="{{ path(app.request.attributes.get('_route'),{page:0}) }}" class="page-link">
+                        {{ 'first'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+            {% for p in pageFirst..pageLast %}
+                <li class="page-item{% if page==p %} active{% endif %}">
+                    <a href="{{ path(app.request.attributes.get('_route'),{page:p}) }}" class="page-link">{{ p+1 }}</a>
+                </li>
+            {% endfor %}
+            {% if page<pages %}
+                <li class="page-item">
+                    <a href="{{ path(app.request.attributes.get('_route'),{page:pages}) }}" class="page-link">
+                        {{ 'last'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endif %}

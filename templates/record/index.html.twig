@@ -33,6 +33,8 @@
             </tbody>
         </table>
 
+        {% include '_pagination.html.twig' with {page:app.request.get('page',0),results:records} only %}
+
     </div>
 
 {% endblock %}
