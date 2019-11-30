@@ -15,7 +15,12 @@ class CarFixtures extends Fixture
         $faker = Factory::create();
 
         $car = new Car();
-        $car->setTitle($faker->word);
+        $car
+            ->setRentalStartedAt(new \DateTime('2017-09-30'))
+            ->setRentalStartedMileage(5000)
+            ->setRentalEndedAt(new \DateTime('2022-09-30'))
+            ->setRentalEndedMileage(135000)
+            ->setTitle(ucfirst($faker->word));
 
         $manager->persist($car);
 

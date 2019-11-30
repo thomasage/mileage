@@ -28,6 +28,7 @@ class UserFixtures extends Fixture
         $user = new User();
         $user
             ->setPassword($this->passwordEncoder->encodePassword($user, 'test'))
+            ->setRoles(['ROLE_USER'])
             ->setUsername($faker->userName);
 
         $manager->persist($user);
