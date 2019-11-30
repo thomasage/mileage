@@ -25,5 +25,7 @@
 
 * Clone repository to local computer
 * Run `composer install`
+* Run `yarn install`
+* Run `yarn build`
 * Customize `hosts.yaml` from `hosts.yaml.dist`
 * Run `vendor/bin/dep deploy prod`
