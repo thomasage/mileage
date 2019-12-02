@@ -55,13 +55,14 @@ class HomeApp {
         if (series[1]) {
             series[1].color = 'green';
             series[1].name = this.$wrapper.data('title-serie1');
+            series[1].type = 'spline';
         }
 
         Highcharts.chart(
             this.$wrapper.prop('id'),
             {
                 chart: {
-                    type: 'spline',
+                    type: 'column',
                     zoomType: 'x'
                 },
                 title: false,
@@ -85,7 +86,10 @@ class HomeApp {
                     pointFormat: '{point.x:%e. %b}: {point.y:.f} km'
                 },
                 plotOptions: {
-                    spline: {
+                    series: {
+                        dataLabels: {
+                            enabled: true
+                        },
                         marker: {
                             enabled: true
                         }
