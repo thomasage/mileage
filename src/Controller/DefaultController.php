@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -15,9 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @param CarRepository $carRepository
      * @param Car $car
-     * @return Response
      *
      * @Route("/{car}",
      *     name="app_homepage",
@@ -65,15 +64,27 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @param RecordRepository $recordRepository
-     * @param Car $car
-     * @return JsonResponse
-     *
-     * @Route("/records/{car}", name="app_load_records", methods={"GET"}, requirements={"car":"\d+"})
+     * @Route("/records/{car}",
+     *     name="app_load_records",
+     *     methods={"GET"},
+     *     requirements={"car":"\d+"})
      */
     public function loadRecords(RecordRepository $recordRepository, Car $car): JsonResponse
     {
         $data = $recordRepository->findChartData($car);
+
+        return new JsonResponse($data);
+    }
+
+    /**
+     * @Route("/records/{car}/gap",
+     *     name="app_load_records_gap",
+     *     methods={"GET"},
+     *     requirements={"car":"\d+"})
+     */
+    public function loadRecordsGap(RecordRepository $recordRepository, Car $car): JsonResponse
+    {
+        $data = $recordRepository->findChartDataGap($car);
 
         return new JsonResponse($data);
     }

@@ -35,6 +35,7 @@
     "require-dev": {
         "deployer/deployer": "^6.4",
         "doctrine/doctrine-fixtures-bundle": "^3.2",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "fzaninotto/faker": "^1.8",
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",

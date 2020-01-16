@@ -23,6 +23,13 @@
                  data-title-serie0="{{ 'field.real'|trans }}"
                  data-title-serie1="{{ 'field.forecast'|trans }}"></div>
 
+            <div id="secondaryChart"
+                 data-url="{{ path('app_load_records_gap',{car:car.id}) }}"
+                 data-title-xaxis="{{ 'field.date'|trans }}"
+                 data-title-yaxis="{{ 'field.gap'|trans }}"
+                 data-title-serie0="{{ 'field.real'|trans }}"
+                 data-title-serie1="{{ 'field.forecast'|trans }}"></div>
+
             {% if progress %}
 
                 <meter class="w-100 mt-5"

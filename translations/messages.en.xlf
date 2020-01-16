@@ -77,6 +77,10 @@
         <source>field.forecast</source>
         <target>Forecast</target>
       </trans-unit>
+      <trans-unit id="xOtj9DS" resname="field.gap">
+        <source>field.gap</source>
+        <target>Gap</target>
+      </trans-unit>
       <trans-unit id="TdoRQG0" resname="field.mileage">
         <source>field.mileage</source>
         <target>Mileage</target>

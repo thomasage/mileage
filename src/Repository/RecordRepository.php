@@ -45,6 +45,24 @@ class RecordRepository extends ServiceEntityRepository
         return $series;
     }
 
+    public function findChartDataGap(Car $car): array
+    {
+        $series = [['data' => []]];
+
+        $builder = $this->createQueryBuilder('record')
+            ->andWhere('record.car = :car')
+            ->setParameter('car', $car)
+            ->addOrderBy('record.date', 'ASC');
+
+        /** @var Record $r */
+        foreach ($builder->getQuery()->getResult() as $r) {
+            $date = $r->getDate();
+            $series[0]['data'][$date->format('Y-m-d')] = round($car->getSupposedMileageAt($date) - $r->getValue());
+        }
+
+        return $series;
+    }
+
     public function findBySearch(int $page = 0): Paginator
     {
         $builder = $this->createQueryBuilder('record')
