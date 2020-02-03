@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Repository;
@@ -57,7 +58,7 @@ class RecordRepository extends ServiceEntityRepository
         /** @var Record $r */
         foreach ($builder->getQuery()->getResult() as $r) {
             $date = $r->getDate();
-            $series[0]['data'][$date->format('Y-m-d')] = round($car->getSupposedMileageAt($date) - $r->getValue());
+            $series[0]['data'][$date->format('Y-m-d')] = round($r->getValue() - $car->getSupposedMileageAt($date));
         }
 
         return $series;
