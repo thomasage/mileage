@@ -6,7 +6,7 @@ require 'recipe/symfony.php';
 // Config
 
 set('application', 'mileage-old');
-set('deploy_path', '~/{{application}}');
+set('deploy_path', '~/');
 set('repository', 'git@github.com:thomasage/mileage.git');
 
 add('shared_files', []);
