@@ -3,8 +3,10 @@
     "description": "A simple app to record mileage",
     "type": "project",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "^8.0",
+        "php": ">=8.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.2",
@@ -21,6 +23,7 @@
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "*",
         "symfony/process": "5.2.*",
+        "symfony/requirements-checker": "^2.0",
         "symfony/security-bundle": "5.2.*",
         "symfony/serializer-pack": "*",
         "symfony/swiftmailer-bundle": "^3.1",
@@ -35,6 +38,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "deployer/deployer": "^7.0.0",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "friendsofphp/php-cs-fixer": "^2.16",
         "fzaninotto/faker": "^1.5",
@@ -73,7 +77,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "vendor/bin/requirements-checker": "php-script"
         },
         "post-install-cmd": [
             "@auto-scripts"
