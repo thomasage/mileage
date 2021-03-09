@@ -4,13 +4,14 @@ namespace App\DataFixtures;
 
 use App\Entity\Car;
 use App\Entity\Record;
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
-class RecordFixtures extends Fixture implements DependentFixtureInterface
+final class RecordFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         /** @var Car $car1 */
         $car1 = $this->getReference('car1');
@@ -136,7 +137,7 @@ class RecordFixtures extends Fixture implements DependentFixtureInterface
             $record = new Record();
             $record
                 ->setCar($car1)
-                ->setDate(\DateTime::createFromFormat('Y-m-d', $datum[0]))
+                ->setDate(DateTime::createFromFormat('Y-m-d', $datum[0]))
                 ->setValue($datum[1]);
 
             $manager->persist($record);

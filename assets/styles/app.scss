@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome";
+
+.form-login {
+    max-width: 25em;
+    margin: 5em auto;
+}
+
+tr[data-url]:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+label.required:after {
+    content: ' *';
+    color: red;
+    font-weight: bold;
+}

@@ -5,12 +5,12 @@ namespace App\DataFixtures;
 
 use App\Entity\Car;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
-class CarFixtures extends Fixture
+final class CarFixtures extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
 

@@ -1,8 +1,8 @@
 import $ from 'jquery';
-import HomeApp from './Components/HomeApp';
-import HomeAppGap from './Components/HomeAppGap';
+import HomeApp from './js/Components/HomeApp';
+import HomeAppGap from './js/Components/HomeAppGap';
 
-import '../scss/home.scss';
+import './styles/home.scss';
 
 $(function () {
 

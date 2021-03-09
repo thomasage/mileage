@@ -7,10 +7,10 @@ namespace App\Repository;
 use App\Entity\Car;
 use App\Entity\Record;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Doctrine\Persistence\ManagerRegistry;
 
-class RecordRepository extends ServiceEntityRepository
+final class RecordRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
