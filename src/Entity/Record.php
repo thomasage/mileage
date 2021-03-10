@@ -31,7 +31,7 @@ class Record
      * @ORM\Column(type="date")
      *
      * @Assert\NotBlank()
-     * @Assert\Date()
+     * @Assert\Type("datetime")
      */
     private $date;
 
